@@ -6,18 +6,32 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "yarn build",
-    "prepublishOnly" : "yarn lint",
+    "prepublishOnly": "yarn lint",
     "preversion": "yarn lint",
     "version": "yarn format && git add -A src",
-    "postversion" : "git push && git push --tags",
+    "postversion": "git push && git push --tags",
     "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\"",
+    "format": "yarn lint 'src/**/*.ts' --quiet --fix",
     "lint": "eslint"
   },
-  "files": ["dist/**/*"],
-  "keywords": ["GraphQL", "validator", "directive", "constraint"],
+  "files": [
+    "dist/**/*"
+  ],
+  "keywords": [
+    "graphql",
+    "validator",
+    "directive",
+    "constraint"
+  ],
   "author": "Kees van Lierop",
-  "license": "ISC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/keesvanlierop/graphql-validator-directive"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@types/validator": "^13.0.0",
     "@typescript-eslint/eslint-plugin": "^3.3.0",
@@ -29,5 +43,11 @@
   },
   "peerDependencies": {
     "validator": "^13.1.1"
+  },
+  "dependencies": {
+    "apollo-server-errors": "^2.4.1",
+    "graphql": "^15.1.0",
+    "graphql-any-type": "^0.0.3",
+    "graphql-tools": "^6.0.10"
   }
 }
