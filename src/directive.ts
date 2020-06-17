@@ -10,7 +10,7 @@ import { SchemaDirectiveVisitor } from 'graphql-tools'
 
 import { ValidationType } from './validator-scalar'
 
-export default class RequiresAuthentication extends SchemaDirectiveVisitor {
+export default class ConstraintDirective extends SchemaDirectiveVisitor {
 	public visitArgumentDefinition(argument: GraphQLArgument) {
 		argument.type = new ValidationType(
 			argument.type,
