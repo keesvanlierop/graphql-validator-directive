@@ -5,12 +5,26 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "prepublish": "tsc"
+    "prepare": "yarn build",
+    "prepublishOnly" : "yarn lint",
+    "preversion": "yarn lint",
+    "version": "yarn format && git add -A src",
+    "postversion" : "git push && git push --tags",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "eslint"
   },
+  "files": ["dist/**/*"],
+  "keywords": ["GraphQL", "validator", "directive", "constraint"],
   "author": "Kees van Lierop",
   "license": "ISC",
   "devDependencies": {
     "@types/validator": "^13.0.0",
+    "@typescript-eslint/eslint-plugin": "^3.3.0",
+    "@typescript-eslint/parser": "^3.3.0",
+    "eslint": "^7.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "prettier": "^2.0.5",
     "typescript": "^3.9.5"
   },
   "peerDependencies": {
