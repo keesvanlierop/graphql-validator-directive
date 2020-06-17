@@ -1,0 +1,19 @@
+{
+  "name": "@k2s/graphql-validator-directive",
+  "version": "0.0.1",
+  "description": "GraphQL directive using validator package to validate input",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepublish": "tsc"
+  },
+  "author": "Kees van Lierop",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/validator": "^13.0.0",
+    "typescript": "^3.9.5"
+  },
+  "peerDependencies": {
+    "validator": "^13.1.1"
+  }
+}
