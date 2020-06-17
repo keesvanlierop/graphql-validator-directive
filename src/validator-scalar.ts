@@ -7,7 +7,7 @@ export class ValidationType extends GraphQLScalarType {
 	private validate(value: any) {
 		const { type, ...args } = this.args
 		// @ts-ignore
-		const isValid = validator[this.args.type](value, args)
+		const isValid = validator[type](value, args)
 
 		if (!isValid) {
 			throw new UserInputError(

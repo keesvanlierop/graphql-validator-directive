@@ -1,7 +1,6 @@
 import {
 	GraphQLArgument,
 	GraphQLInputField,
-	GraphQLSchema,
 	GraphQLDirective,
 	DirectiveLocation,
 	GraphQLString,

@@ -12,6 +12,9 @@
 		"prettier/@typescript-eslint"
 	],
 	"rules": {
-		"prettier/prettier": 2
+		"prettier/prettier": 2,
+		"@typescript-eslint/ban-ts-comment": "off",
+		"@typescript-eslint/no-explicit-any": "off",
+		"@typescript-eslint/explicit-module-boundary-types": "off"
 	}
 }
